@@ -1,6 +1,7 @@
 import React from 'react';
 import { getInfo } from './jsFuntions/variables';
 import { useState } from 'react';
+import Map from './map';
 
 const Weather = () => {
     let info = getInfo();
@@ -58,6 +59,7 @@ const Weather = () => {
                     <button class="btn btn-outline-light mt-3" id="citySearch" onClick={changeValues}>Refresh card</button>
                 </div>
             </div>
+            <Map lat={lattitude} long={longitude}/>
         </div>
     );
 }
