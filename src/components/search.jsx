@@ -20,7 +20,7 @@ const Search = () => {
             .catch(err => console.error(err));
             saveInfo(search, lat, lon);
         };
-    saveInfo(search, lat, lon);
+        saveInfo(search, lat, lon);
 
     return (
         <div class="container text-center mt-3">

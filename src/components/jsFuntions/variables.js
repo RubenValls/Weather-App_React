@@ -5,7 +5,7 @@ let lon = '-0.1276474';
 export function saveInfo(city, lattitude, longitude){
     cityName = city;
     lat = lattitude;
-    lon = longitude
+    lon = longitude;
 }
 
 export function getInfo(){
