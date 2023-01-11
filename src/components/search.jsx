@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { saveInfo } from './jsFuntions/variables';
 
 const Search = () => {
     
@@ -9,6 +10,7 @@ const Search = () => {
     
     const onChange = (city) => {
         setSearch(city.currentTarget.value);
+        saveInfo(search, lat, lon);
     };
 
     const inputValue = () => {
@@ -18,6 +20,7 @@ const Search = () => {
             .then(response => {
                 setLat(response[0].lat);
                 setLon(response[0].lon);
+                saveInfo(search, response[0].lat, response[0].lon);
             })
             .catch(err => console.error(err));
     }
@@ -28,7 +31,7 @@ const Search = () => {
             <input type="text" class="form-control w-50 m-auto" id="cityName" name="cityName" placeholder="London..." onChange={onChange} required></input>
             <button class="btn btn-outline-primary mt-3" id="citySearch" onClick={inputValue}>Check Weather</button>
             <div class="container text-center mt-3">
-                <h4>Latitude:<h5>{lat}</h5>Longitude:<h5>{lon}</h5></h4>
+                <h4>Latitude:<p id="cityLat">{lat}</p>Longitude:<p id="cityLon">{lon}</p></h4>
             </div>
         </div>
     );
