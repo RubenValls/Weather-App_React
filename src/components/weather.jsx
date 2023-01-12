@@ -46,13 +46,13 @@ const Weather = () => {
         <div class="container mt-3 text-center">
             <div class="card bg-dark text-white">
                 <div class="card-body">
-                    <h2>{city.toUpperCase()}</h2>
-                    <p class="text-muted mb-0">{weather.toUpperCase()}</p>
                     <div class="row">
                     <div class="col-6">
-                        <img alt="weather" className='weather-icon' src={`http://openweathermap.org/img/wn/${weatherIcon}@2x.png`}/>
+                        <img alt="weather" className='weather-icon' class="h-100" src={`http://openweathermap.org/img/wn/${weatherIcon}@2x.png`}/>
                     </div>
                     <div class="col-6">
+                        <h2>{city.toUpperCase()}</h2>
+                        <p class="text-muted mb-0">{weather.toUpperCase()}</p>
                         <h2 class="display-2"><strong>{temperature}°C</strong></h2>
                     </div>
                     </div>

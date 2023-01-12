@@ -1,10 +1,12 @@
 import React from 'react';
 
 const Map = (props) => {
-    
+
+    const mapLink = `http://maps.google.com/maps?q=${props.lat},${props.long}&output=embed`;
+
     return (
-        <div class="container">
-            <h1>MAPA: {props.lat} & {props.long}</h1>
+        <div class="container mt-5">
+            <iframe title="GoogleMap" src={mapLink} height="400px" class="w-100"></iframe>
         </div>
     );
 }
