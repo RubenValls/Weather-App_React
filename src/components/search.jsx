@@ -13,7 +13,7 @@ const Search = () => {
         };
     
     const apiKey = "1d29ede4502de56f2857ec5afb7073d8";
-    fetch("https://api.openweathermap.org/geo/1.0/direct?q="+search+"&limit="+1+"&appid="+apiKey)
+    fetch("http://api.openweathermap.org/geo/1.0/direct?q="+search+"&limit="+1+"&appid="+apiKey)
         .then(response => response.json())
         .then(response => {
             setLat(response[0].lat);
