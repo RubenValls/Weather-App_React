@@ -18,7 +18,8 @@ const Weather = () => {
         fetch("https://api.openweathermap.org/data/2.5/weather?lat="+ lattitude +"&lon="+ longitude +"&exclude=hourly,daily&appid="+ apiK)
             .then(response => response.json())
             .then(response => {
-                setTemperature(Number(response.main.temp - 273).toFixed(2));
+                console.log(response);
+                setTemperature(Number(response.main.temp - 273,15).toFixed(1));
                 setWeather(response.weather[0].main + " - " + response.weather[0].description);
                 setWeatherIcon(response.weather[0].icon);
             })
